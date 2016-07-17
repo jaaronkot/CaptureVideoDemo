@@ -1,4 +1,5 @@
 # CaptureVideoDemo
+## Introduction
 It's a demo run in ios that can capture  camera video and save it as h264 file by using hard encode. The H.264 file save to App Document 
 folder, you can play it with VLC player.
 ## 简介
