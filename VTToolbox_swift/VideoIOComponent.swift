@@ -87,15 +87,6 @@ final class VideoIOComponent: NSObject {
             connection.videoOrientation = orientation
             session.commitConfiguration()
             
-//            for connection in output.connections {
-//                guard let connection:AVCaptureConnection = connection as? AVCaptureConnection else {
-//                    continue
-//                }
-//                if connection.supportsVideoOrientation {
-//                    
-//                }
-//            }
-            
         } catch let error as NSError {
             print(error)
         }
@@ -117,7 +108,7 @@ extension VideoIOComponent: AVCaptureVideoDataOutputSampleBufferDelegate {
         }
         
         avcEncoder.encodeImageBuffer(image, presentationTimeStamp: CMSampleBufferGetPresentationTimeStamp(sampleBuffer), presentationDuration: CMSampleBufferGetDuration(sampleBuffer))
-        // print("get camera image data! Yeh!")
+            // print("get camera image data! Yeh!")
     }
 }
 
