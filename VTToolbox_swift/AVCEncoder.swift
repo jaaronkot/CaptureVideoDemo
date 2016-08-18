@@ -186,7 +186,9 @@ final class AVCEncoder: NSObject {
         h264File = documentDir[0] + "/demo.h264"
         
         do {
-            try NSFileManager.defaultManager().removeItemAtPath(h264File)
+            if NSFileManager.defaultManager().fileExistsAtPath(h264File) {
+                try NSFileManager.defaultManager().removeItemAtPath(h264File)
+            }
             try NSFileManager.defaultManager().createFileAtPath(h264File, contents: nil, attributes: nil)
             try fileHandle = NSFileHandle.init(forWritingToURL: NSURL(string: h264File)!)
         } catch let error as NSError {
